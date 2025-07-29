@@ -1,0 +1,7 @@
+// Abstractions (variables, mixins y funciones)
+@use './variables' as *;
+@use './fonts';
+
+// Base styles
+@use './reset';
+@use './typography';
