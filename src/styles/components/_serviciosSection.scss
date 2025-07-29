@@ -1,0 +1,49 @@
+@use '../variables' as *;
+
+.servicios-section {
+  padding: 6rem 1rem;
+  background-color: $color-secondary-opacity;
+
+  h2 {
+    text-align: center;
+    font-family: $font-primary;
+    color: $color-primary;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+  }
+
+  .card-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    .card {
+      background: $color-white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba($color-primary, .08);
+      transition: transform .3s ease, box-shadow .3s ease;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      h3{
+        font-family: $font-primary;
+        color: $color-primary;
+        margin-bottom: .75rem;
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-family: $font-secondary;
+        color: $color-text;
+        line-height: 1.6;
+      }
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 6px 16px rgba($color-primary, .15);
+      }
+    }
+  }
+}

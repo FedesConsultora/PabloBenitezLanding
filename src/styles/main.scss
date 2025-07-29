@@ -5,3 +5,10 @@
 // Base styles
 @use './reset';
 @use './typography';
+
+//componentes
+@use './components/header';
+@use './components/footer';
+@use './components/serviciosSection';
+@use './components/sobreMiSection';
+@use './components/sobreMiModal';
