@@ -23,8 +23,7 @@ const items = [
 
 export default function ObjetivosSection() {
   return (
-    <section id="objetivos" className="objetivos-section">
-      {/* Título */}
+    <section id="servicios" className="objetivos-section">
       <motion.h2
         className="objetivos-title"
         initial={{ opacity: 0, y: 30 }}

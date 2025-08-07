@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,25 +9,8 @@ export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-
-  useEffect(() => {
-    if (!isHome) {
-      setScrolled(true); // Siempre fondo blanco en páginas internas
-      return;
-    }
-
-    const hero = document.querySelector('.hero-section');
-    const observer = new IntersectionObserver(
-      ([entry]) => setScrolled(!entry.isIntersecting),
-      { threshold: 0.1 } // cambia estado cuando Hero casi sale de vista
-    );
-
-    if (hero) observer.observe(hero);
-    return () => observer.disconnect();
-  }, [isHome]);
 
   const navItems = [
     { label: 'Servicios', to: 'servicios', smooth: true },
@@ -37,7 +20,7 @@ export default function Header() {
   return (
     <>
       <motion.header
-        className={`header ${scrolled ? 'scrolled' : 'transparent'}`}
+        className="header scrolled" // Fuerza la franja blanca siempre
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -62,12 +45,19 @@ export default function Header() {
                     </ScrollLink>
                   </li>
                 ))}
-              <li>
-                <RouterLink to="/prensa">Prensa</RouterLink>
-              </li>
-              <li>
-                <RouterLink to="/contacto">Contacto</RouterLink>
-              </li>
+              {isHome && (
+                <li>
+                  <ScrollLink
+                    to="contacto"
+                    smooth={true}
+                    duration={600}
+                    offset={-60}
+                  >
+                    Contacto
+                  </ScrollLink>
+                </li>
+              )}
+              {/* Prensa deshabilitado */}
             </ul>
           </nav>
 
@@ -113,12 +103,20 @@ export default function Header() {
                     </ScrollLink>
                   </li>
                 ))}
-              <li>
-                <RouterLink to="/prensa" onClick={toggleMenu}>Prensa</RouterLink>
-              </li>
-              <li>
-                <RouterLink to="/contacto" onClick={toggleMenu}>Contacto</RouterLink>
-              </li>
+              {isHome && (
+                <li>
+                  <ScrollLink
+                    to="contacto"
+                    smooth={true}
+                    duration={600}
+                    offset={-60}
+                    onClick={toggleMenu}
+                  >
+                    Contacto
+                  </ScrollLink>
+                </li>
+              )}
+              {/* Prensa deshabilitado */}
             </ul>
           </motion.div>
         )}

@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
-import { Link as RouterLink } from 'react-router-dom';
-import { FaInstagram, FaFacebookF, FaXTwitter } from 'react-icons/fa6';
+import { Link as ScrollLink } from 'react-scroll';
+import { FaInstagram, FaFacebookF } from 'react-icons/fa6';
 import logo from '../assets/img/logoBlanco.webp';
 
 export default function Footer() {
@@ -8,24 +8,27 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      {/* Panel interior con bordes redondeados (azul) */}
       <div className="footer-panel">
-        {/* Fila superior: logo + navigation */}
+        {/* Fila superior: logo + navegación */}
         <div className="top-row">
-          <RouterLink to="/" className="brand">
+          <a href="/" className="brand">
             <img src={logo} alt="ValorAR" />
-          </RouterLink>
+          </a>
 
           <nav className="nav-links">
-            <RouterLink to="/">Inicio</RouterLink>
-            <RouterLink to="/quienes-somos">Quienes somos</RouterLink>
-            <RouterLink to="/catalogo">Catalogo</RouterLink>
-            <RouterLink to="/aliados">Aliados</RouterLink>
-            <RouterLink to="/contacto">Contacto</RouterLink>
+            <ScrollLink to="servicios" smooth={true} duration={600} offset={-60}>
+              Servicios
+            </ScrollLink>
+            <ScrollLink to="sobre-mi" smooth={true} duration={600} offset={-60}>
+              Sobre mí
+            </ScrollLink>
+            <ScrollLink to="contacto" smooth={true} duration={600} offset={-60}>
+              Contacto
+            </ScrollLink>
           </nav>
         </div>
 
-        {/* Social row */}
+        {/* Redes sociales */}
         <div className="social-row">
           <a href="https://instagram.com/valorar.finanzas" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
@@ -37,12 +40,12 @@ export default function Footer() {
 
         {/* Legales */}
         <div className="legal-row">
-          <RouterLink to="/terminos">Términos y condiciones</RouterLink>
-          <RouterLink to="/privacidad">Política de privacidad</RouterLink>
+          {/* Si no están disponibles todavía, ocultalos */}
+          {/* <a href="/terminos">Términos y condiciones</a>
+          <a href="/privacidad">Política de privacidad</a> */}
           <p className="copyright">© {year} ValorAR Finanzas.</p>
         </div>
       </div>
-
     </footer>
   );
 }
