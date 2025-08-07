@@ -1,0 +1,58 @@
+@use '../variables' as *;
+
+.ideal-section {
+  padding: 5rem 1.2rem;
+  text-align: center;
+
+  @media (min-width: 768px) { padding: 6rem 2rem; }
+
+  .ideal-title {
+    font-family: $font-primary;
+    text-transform: uppercase;
+    color: $color-primary;
+    font-size: 1.45rem;
+    line-height: 1.3;
+    margin-bottom: 2.5rem;
+
+    @media (min-width: 768px) { font-size: 2rem; }
+  }
+
+  /* ---------- Grid cuadrado mobile ---------- */
+  .ideal-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  .ideal-card {
+    /* dos columnas en mobile */
+    flex: 0 0 calc(47% - 1rem);
+    aspect-ratio: 1 / 0.5;          /* cuadrado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.2rem;
+    border-radius: 18px;
+
+    @media (min-width: 1000px) {
+      /* cuatro columnas en desktop */
+      flex: 0 0 calc(25% - 1.2rem);
+    }
+
+    h3 {
+      font-family: $font-secondary;
+      text-transform: uppercase;
+      color: $color-secondary;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-family: $font-secondary;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: rgba($color-text, 0.9);
+    }
+  }
+}

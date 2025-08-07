@@ -6,12 +6,65 @@
   left: 0;
   width: 100%;
   height: 70px;
-  background-color: rgba($color-white, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba($color-primary, 0.05);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
+
+  &.transparent {
+    background-color: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+
+    .desktop-nav ul li a {
+      color: $color-white;
+
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+
+    .menu-button {
+      color: $color-white;
+    }
+  }
+
+  &.transparent-blur {
+    // Variante opcional con blur ligero sobre el Hero
+    background-color: rgba($color-white, 0.05);
+    backdrop-filter: blur(6px);
+    box-shadow: none;
+
+    .desktop-nav ul li a {
+      color: $color-white;
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+
+    .menu-button {
+      color: $color-white;
+    }
+  }
+
+  &.scrolled {
+    background-color: rgba($color-white, 0.95);
+    backdrop-filter: blur(0px);
+    box-shadow: 0 2px 4px rgba($color-primary, 0.05);
+
+    .desktop-nav ul li a {
+      color: $color-primary;
+
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+
+    .menu-button {
+      color: $color-primary;
+    }
+  }
 
   .header-container {
     width: 90%;
@@ -20,51 +73,103 @@
     justify-content: space-between;
     align-items: center;
 
-    .logo {
-      display: flex;
-      align-items: center;
-      color: $color-primary;
-      text-decoration: none;
-
-      img {
-        height: 70px;
-        margin-right: 10px;
-      }
+    .logo img {
+      height: 40px;
     }
 
-    nav ul {
+    .desktop-nav ul {
       display: flex;
       gap: 2rem;
       list-style: none;
 
-      li {
-        a {
-          font-family: $font-secondary;
-          color: $color-primary;
-          text-decoration: none;
-          cursor: pointer;
-          position: relative;
-          transition: color 0.3s ease;
+      li a {
+        font-family: $font-secondary;
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+        transition: color 0.3s ease;
 
-          &:hover {
-            color: $color-secondary;
-          }
-
-          &::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: $color-secondary;
-            transition: width 0.3s ease;
-          }
-
-          &:hover::after {
-            width: 100%;
-          }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: -4px;
+          left: 0;
+          background-color: $color-secondary;
+          transition: width 0.3s ease;
         }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+
+    .menu-button {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  /* Mobile first */
+  @media (max-width: 650px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .menu-button {
+      display: flex !important;
+    }
+  }
+}
+
+/* Overlay Mobile */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(8px);
+  background-color: rgba($color-white, 0.05);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  transition: opacity 0.3s ease;
+
+  .close-button {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    color: $color-white;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    li a {
+      font-family: $font-secondary;
+      font-size: 1.5rem;
+      color: $color-white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      font-weight: 700;
+
+      &:hover {
+        color: $color-secondary;
       }
     }
   }
