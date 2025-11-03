@@ -16,7 +16,7 @@ const servicios = [
   {
     icon: <HiCalendar />,
     title: 'PLANIFICACIÓN PARA EL FUTURO',
-    text: 'Enfocado en personas mayores de 40 y 50 años que buscan consolidar su patrimonio y asegurar su tranquilidad.'
+    text: 'Nos enfocamos en personas de 40 y 50 años a consolidar su patrimonio y asegurar su tranquilidad con decisiones pensadas a largo plazo.'
   }
 ];
 

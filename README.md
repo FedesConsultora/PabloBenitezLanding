@@ -1,6 +1,6 @@
 # Landing Page - ValorAR Finanzas
 
-Landing institucional para la marca **ValorAR Finanzas** de Pablo Benítez, desarrollada por **Fedes Consultora**.  
+Landing institucional para la marca **ValorAR Finanzas** de Pablo Benitez, desarrollada por **Fedes Consultora**.  
 El objetivo es centralizar los servicios de asesoramiento financiero, presentar la marca e incluir secciones de prensa y contacto.
 
 ## 🔹 Características principales

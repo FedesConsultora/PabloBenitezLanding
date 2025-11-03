@@ -1,0 +1,154 @@
+/* src/pages/libros.scss */
+@use '../styles/variables' as *; 
+
+.container { max-width: 1180px; margin: 0 auto; padding: 2rem 1rem; }
+
+.books-hero {
+  position: relative;
+  min-height: clamp(360px, 45vh, 520px);
+  display: grid;
+  place-items: end center;
+  padding: 3.5rem 1rem;
+  color: $color-white;
+
+  /* sin bordes redondeados abajo */
+  border-radius: 0;
+
+  background-image: var(--hero-mobile);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (min-width: 768px) {
+    background-image: var(--hero-desktop);
+    padding: 5rem 1rem;
+  }
+
+  &__inner {
+    max-width: 780px;
+    text-align: center;
+    h1 {
+      color: #ffffff !important;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: .5rem;
+    }
+    p {
+      font-family: $font-secondary;
+      color: #ffffff !important;
+      font-size: clamp(.95rem, 1.4vw, 1.1rem);
+    }
+  }
+}
+
+.books-wrap { padding-block: 2.25rem 3rem; }
+.books-title {
+  font-family: $font-primary;
+  color: $color-text;
+  font-size: clamp(1.5rem, 1.8vw, 2rem);
+  margin: .25rem 0 1.25rem;
+}
+/* --- GRID (ligero refinamiento) --- */
+.books-grid {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  place-items: start center; /* centra cada card en su celda */
+
+  @media (min-width: 760px) {
+    gap: 1.8rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media (min-width: 1500px) {
+    gap: 2rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* --- CARD estética nueva --- */
+.book-card {
+  --card-bg: #ffffff;
+  --card-br: 16px;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(145deg, rgba(219,187,151,.55), rgba(16,37,59,.15)) border-box;
+  border: 1px solid transparent;            /* “borde” suave con gradient */
+  border-radius: var(--card-br);
+  box-shadow: 0 10px 26px rgba(16,37,59,.08);
+  padding: 1.05rem 1rem 1.1rem;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  width: 100%;
+  max-width: 340px;                          /* la card no se hace infinita en grids anchos */
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(16,37,59,.12);
+    border-color: rgba(219,187,151,.7);
+  }
+}
+
+.book-card__link {
+  display: grid;
+  grid-template-rows: auto minmax(2.6em, auto);
+  row-gap: .8rem;
+  text-decoration: none;
+  color: inherit;
+
+  &.is-disabled { pointer-events: none; opacity: .55; }
+}
+
+/* Contenedor para centrar la portada */
+.book-card__media {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: .15rem;
+}
+
+/* --- PORTADA: máx. 170px de ancho, alto auto --- */
+.book-card__cover {
+  /* caja visual de la portada (mantiene esquinas redondeadas y sombra sutil) */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f4f6fa;
+  box-shadow: 0 4px 16px rgba(16,37,59,.10);
+}
+
+.book-card__cover img {
+  display: block;
+  width: min(170px, 100%);  /* 👈 ancho máx. 170px */
+  height: auto;             /* 👈 alto automático */
+}
+
+/* placeholder si no hay imagen */
+.book-thumb__ph {
+  width: 140px; height: 190px;
+  background: #e9ecf4;
+  border-radius: 10px;
+}
+
+/* --- TÍTULO (clamp + mejor legibilidad) --- */
+.book-card__title {
+  font-family: $font-secondary;
+  font-weight: 600;
+  font-size: .98rem;
+  line-height: 1.25;
+  text-align: center;
+  color: $color-text;
+  margin: .2rem auto 0;
+  max-width: 90%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     /* máximo 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Nota */
+.books-note {
+  margin-top: 1.1rem;
+  opacity: .7;
+  font-size: .92rem;
+}
+
+/* Respeta reducir movimiento del sistema */
+@media (prefers-reduced-motion: reduce) {
+  .book-card { transition: none; }
+}

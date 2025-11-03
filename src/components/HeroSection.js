@@ -19,19 +19,20 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Soy Pablo Benítez, asesor financiero matriculado.  
-          Mi propósito es ayudarte a proteger y hacer crecer tu patrimonio  
-          con la atención personalizada que te merecés.
+          Soy Pablo Benitez, asesor financiero matriculado. Mi propósito es ayudarte a proteger y hacer crecer tu patrimonio con la atención personalizada que te merecés.
         </motion.p>
 
-        <motion.button
+        <motion.a
+          href="https://wa.me/5491122837774?text=Hola%20Pablo%2C%20quiero%20agendar%20una%20reunión%20sin%20costo%20como%20ofrecés%20en%20la%20web.%20Gracias%21"
+          target="_blank"
+          rel="noopener noreferrer"
           className="cta-button"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           Agendar una reunión sin costo
-        </motion.button>
+        </motion.a>
       </div>
     </section>
   );

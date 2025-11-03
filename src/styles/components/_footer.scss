@@ -94,6 +94,14 @@
         color: rgba($color-white, .75);
         font-size: .8rem;
       }
+      .dev{
+        color: rgba($color-white, .75);
+        font-size: .9rem;
+        .linkDev{
+          color: $color-white;
+          cursor: pointer;
+        }
+      }
     }
 
     a {

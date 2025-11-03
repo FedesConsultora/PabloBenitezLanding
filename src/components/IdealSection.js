@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const cards = [
   {
     label: 'SOS',
-    text: 'Dueño/a de una PyME y querés gestionar tanto el patrimonio de la empresa como el tuyo.'
+    text: 'dueño/a de una PyME y querés gestionar tanto el patrimonio de la empresa como el tuyo.'
   },
   {
     label: 'TENÉS',
@@ -12,11 +12,11 @@ const cards = [
   },
   {
     label: 'VALORÁS',
-    text: 'Un trato cercano y respuestas rápidas por encima de las estructuras corporativas impersonales.'
+    text: 'un trato cercano y respuestas rápidas por encima de las estructuras corporativas impersonales.'
   },
   {
     label: 'BUSCÁS',
-    text: 'Confianza y seguridad para construir, proteger y hacer crecer tu patrimonio de forma sostenida y a largo plazo.'
+    text: 'confianza y seguridad para construir, proteger y hacer crecer tu patrimonio de forma sostenida y a largo plazo.'
   }
 ];
 

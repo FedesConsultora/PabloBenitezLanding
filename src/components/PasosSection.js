@@ -5,17 +5,17 @@ const pasos = [
   {
     paso: 'PASO 1',
     title: '',
-    text: 'Reunión inicial nos conocemos, me contás tu historia, tus metas y resolvemos dudas. Sin compromiso.'
+    text: 'Reunión inicial. Nos conocemos, me contás tu historia, tus metas y resolvemos dudas. Sin compromiso.'
   },
   {
     paso: 'PASO 2',
     title: '',
-    text: 'Diagnóstico y propuesta analizo tu situación y presento una estrategia clara alineada a tus objetivos.'
+    text: 'Diagnóstico y propuesta. Analizo tu situación y te presento una estrategia clara, alineada a tus objetivos.'
   },
   {
     paso: 'PASO 3',
     title: '',
-    text: 'Implementación y seguimiento ponemos en marcha el plan y ajustamos la estrategia siempre que sea necesario.'
+    text: 'Implementación y seguimiento. Ponemos en marcha el plan y ajustamos la estrategia siempre que haga falta.'
   }
 ];
 

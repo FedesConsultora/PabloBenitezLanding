@@ -42,9 +42,7 @@ export default function ObjetivosSection() {
         transition={{ delay: 0.1, duration: 0.6, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        Vengo de una larga carrera en la banca y en uno de los brokers más grandes de Argentina.
-        Hoy, como asesor independiente, combino esa experiencia con lo que más valoro: estar cerca
-        de mis clientes.
+        Vengo de una larga carrera en la banca y en uno de los brókers más grandes de Argentina. Hoy, como asesor independiente, combino esa experiencia con lo que más valoro: estar cerca de mis clientes.
       </motion.p>
 
       {/* Tarjetas */}

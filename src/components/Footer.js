@@ -43,7 +43,8 @@ export default function Footer() {
           {/* Si no están disponibles todavía, ocultalos */}
           {/* <a href="/terminos">Términos y condiciones</a>
           <a href="/privacidad">Política de privacidad</a> */}
-          <p className="copyright">© {year} ValorAR Finanzas.</p>
+          <p className="copyright">© {year} ValorAR Finanzas. Todos los derechos reservados.</p>
+          <p className='dev'> Desarrollado por <a target='blank' href='fedes.ai' className='linkDev'>Fedes Consultora</a></p>
         </div>
       </div>
     </footer>

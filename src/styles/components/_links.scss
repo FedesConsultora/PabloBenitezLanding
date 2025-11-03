@@ -1,0 +1,93 @@
+@use '../variables' as *;
+
+.links-page {
+  min-height: calc(100vh - 70px); // resta el header fijo
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  background: $color-background;
+
+  @media (min-width: 1024px) {
+    padding: 3.5rem 1rem;
+  }
+}
+
+.links-panel {
+  width: 100%;
+  max-width: 560px;
+  background: $color-primary;
+  color: $color-white;
+  border-radius: 28px;
+  padding: 2rem 1.25rem;
+  box-shadow: 0 18px 40px rgba(16, 37, 59, 0.25);
+
+  @media (min-width: 768px) {
+    padding: 2.75rem 2rem;
+    border-radius: 32px;
+  }
+
+  .brand {
+    text-align: center;
+    margin-bottom: 1.75rem;
+
+    img {
+      height: 30px;
+      margin: 0 auto 0.75rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: $font-primary;
+      font-size: 1.25rem;
+      letter-spacing: .02em;
+      color: $color-white;
+      margin-bottom: .25rem;
+    }
+
+    p {
+      font-family: $font-secondary;
+      color: rgba($color-white, .8);
+      font-size: .95rem;
+    }
+  }
+
+  .links-list {
+    list-style: none;
+    display: grid;
+    gap: 0.9rem;
+    margin: 0;
+
+    li { width: 100%; }
+
+    .link-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      padding: .9rem 1.1rem;
+      border-radius: 14px;
+      background: $color-secondary;
+      color: $color-primary;
+      font-family: $font-secondary;
+      font-weight: 700;
+      letter-spacing: .01em;
+      transition: transform .25s ease, background-color .25s ease;
+
+      .icon { font-size: 1.1rem; line-height: 0; }
+
+      &:hover { background: $color-secondary-dark; }
+      &:active { transform: translateY(1px); }
+    }
+  }
+
+  .links-note {
+    text-align: center;
+    margin-top: 1.5rem;
+
+    small {
+      font-family: $font-secondary;
+      color: rgba($color-white, .85);
+    }
+  }
+}

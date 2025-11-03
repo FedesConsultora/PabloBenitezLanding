@@ -120,7 +120,7 @@ export default function ContactForm() {
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
         {/* Nombre */}
         <div>
-          <label htmlFor="name">Nombre y Apellido</label>
+          <label htmlFor="name">Nombre y apellido</label>
           <input
             id="name"
             type="text"
