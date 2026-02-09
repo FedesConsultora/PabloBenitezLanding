@@ -44,7 +44,7 @@ export default function Footer() {
           {/* <a href="/terminos">Términos y condiciones</a>
           <a href="/privacidad">Política de privacidad</a> */}
           <p className="copyright">© {year} ValorAR Finanzas. Todos los derechos reservados.</p>
-          <p className='dev'> Desarrollado por <a target='blank' href='fedes.ai' className='linkDev'>Fedes Consultora</a></p>
+          <p className='dev'> Desarrollado por <a target='blank' href='https://fedes.ai' className='linkDev'>Fedes Consultora</a></p>
         </div>
       </div>
     </footer>
